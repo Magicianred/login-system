@@ -1,0 +1,68 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background: url(../IMG/fundo13.jpg) no-repeat;	
+	color: white;
+	font-family: arial;
+}
+
+input{
+	display: block;
+	height: 55px;
+	width: 380px;
+	margin: 10px;
+	border-radius: 30px;
+	border: 1px solid white;
+	font-size: 16pt;
+	padding: 10px 20px;
+	background-color: rgba(255,255,255,0.01);
+	color: white;
+	outline: none;
+}
+
+div#corpo-form{
+	width: 440px;
+	margin: 130px auto 0px auto;
+}
+
+div#corpo-form-cad{
+	width: 440px;
+	margin: 30px auto 0px auto;
+}
+
+div#corpo-form h1, div#corpo-form-cad h1{
+	text-align: center;
+	padding: 20px;
+}
+
+a{ 
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	display: block;
+}
+
+a:hover{
+	text-decoration: underline;
+	margin: 
+}
+
+input[type=submit] {
+	margin-left: 30px;
+	background-color: #FF0066;
+	border: none;
+	cursor: pointer;
+	
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color:  #fff;
+}
+

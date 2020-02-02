@@ -1,6 +1,6 @@
 <?php
 
-Class Usuario{
+Class Usuario {
 
 	private $pdo;
 	public $msgErro = ""; //se continuar vazia, é pq está ok
@@ -9,7 +9,7 @@ Class Usuario{
 		global $pdo;		
 		try {
 			$pdo = new PDO("mysql:dbname=".$nome.";$host".$host,$usuario,$senha);
-		} catch (Exception $e) {
+		} catch (PDOException $e) {
 			$msgErro = $e->getMessage();
 		}
 	}
@@ -35,17 +35,17 @@ Class Usuario{
 		}
 	}
 
-	public function logar($email, $senha){
+	public function logar($email, $senha) {
 		global $pdo;
 		//verificar se o email e a senha estao cadastrados, se sim
 		$sql = $pdo->prepare("SELECT id_usuario FROM usuarios WHERE email = :e AND senha = :s");
-		$sql->bindValue(":e", $email);
-		$sql->bindValue(":s", md5($senha));
+		$sql->bindValue(":e",$email);
+		$sql->bindValue(":s",md5($senha));
 		$sql->execute();
 		if ($sql->rowCount() > 0) {
 			
 			//entrar no sistema (sessao)
-			$dado = $sql->fecth();
+			$dado = $sql->fetch();
 			session_start();
 			$_SESSION['id_usuario'] = $dado['id_usuario'];
 			return true; //logado com sucesso
